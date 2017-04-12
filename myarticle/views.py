@@ -27,3 +27,10 @@ def detail(request, my_args):
 '''
 def templateTest(request):
 	return render(request,'templateTest.html',{'nowTime':datetime.now()})
+
+def archives(request):
+	try:
+		postList = myArticle.objects.all()
+	except myArticle.DoesNotExist:
+		raise Http404
+	return render(request,'archives.html',{'post_list' : postList,'error': False})
