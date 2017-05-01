@@ -2,8 +2,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="pure-g">
-<div class="posts pure-u-3-4">
 <div class="posts">
         <section class="post">
             <header class="post-header">
@@ -22,26 +20,15 @@
         </section>
         {% load comments %}
 </div><!-- /.blog-post -->
+<div class="commit">
+<h3>您想评论些什么吗？</h3>
+    <label>评论内容:</label>
+    <textarea class="new_commit"></textarea>
+    <input type="submit" class="button-success pure-button submit-button" name="submit" value="发送">
 </div>
-<div class="pure-u-1-4" style="background-color: lightgray;">
- <!--<dir class="posts">
-       <section class="post">
-            <header class="post-header">
-                <h2 class="post-title"><a href="#">{{ post.title }}</a>
-                </h2>
-                    <p class="post-meta">
-                        Time: <a class="post-author" href="#">{{ post.datetime|date:"Y /m /d"}}</a> <a class="post-category post-category-js" href="#" tag=post.category %}">{{ post.category }}</a>
-                    </p>
-            </header>
-        </section>
-</dir>-->
-<p>
-    <input type="text" placeholder="搜索" style="width: 120px">
-    <input type="button" class="button-success pure-button" name="search"  style="" value="搜索">
-</p>
-<div >
-<h3>文章归档</h3>
+<div class="commit-list">
+    <h3 >评论列表</h3>
+
 </div>
-</div>
-</div>
+
 {% endblock %}

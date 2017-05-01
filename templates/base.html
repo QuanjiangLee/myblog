@@ -24,7 +24,13 @@
                         <a class="pure-button" href="https://github.com/leequanjiang" target="_blank">Github</a>
                     </li>
                     <li class="nav-item">
-                        <a class="pure-button" href="http://weibo.com/" target="_blank">微博</a>
+                        <a class="pure-button" href="http://twitter.com/QuanjiangLee" target="_blank">Twitter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://heihei520.com/" target="_blank">我的博客</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://github.com/yahoo/pure/" target="_blank">关于pure</a>
                     </li>
                 </ul>
             </nav>
@@ -32,20 +38,40 @@
     </div>
 
     <div class="content pure-u-1 pure-u-md-4-5">
-        <div>
+    <div class="pure-g">
+        <div class="posts pure-u-3-4" style="padding-right: 4em;">
             {% block content %}
             {% endblock %}
-            <div class="footer">
-                <div class="pure-menu pure-menu-horizontal pure-menu-open">
-                    <ul>
-                        <li><a href="http://heihei520.com/" target="_blank">我的旧博客</a></li>
-                        <li><a href="http://twitter.com/QuanjiangLee" target="_blank">我的Twitter</a></li>
-                        <li><a href="http://github.com/yahoo/pure/" target="_blank">关于pure</a></li>
-                    </ul>
-                </div>
-            </div>
+        </div>
+        <div class="pure-u-1-4">
+<div>
+    <input type="text" placeholder="搜索" class="search">
+    <input type="button" class="pure-button search-button" name="search" value="搜索">
+</div>
+<div >
+<h3 class="widget-title"><span>文章归档</span></h3>
+    <ul id="archList">
+    
+    </ul>
+
+</div>
+<div style="margin-top: 30px;">
+    <h3 class="widget-title"><span>近期文章</span></h3>
+    <ul id="recList">
+        
+    </ul>
+</div>
+</div>
+</div>
+<div class="footer">
+        <div class=" pure-menu-horizontal pure-menu-open">
+            <ul style="margin-right: -200px">
+                <li><a href="#" class="button-success submit-button" target="">登陆帐号</a></li>
+                <li><a href="#" target="">忘记密码？</a></li>
+            </ul>
         </div>
     </div>
+</div>
 </div>
 
 </body>
