@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div>
 <div class="posts">
         <section class="post">
             <header class="post-header">
@@ -18,8 +19,9 @@
                     </p>
                 </div>
         </section>
-        {% load comments %}
 </div><!-- /.blog-post -->
+<a class="pure-button" style="float:right;" href="{% url 'home'  %}"><<<返回列表</a>
+</div>
 <div class="commit">
 <h3>您想评论些什么吗？</h3>
     <label>评论内容:</label>
