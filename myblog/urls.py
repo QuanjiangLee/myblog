@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^templateTest/$',views.templateTest,name = 'nowTime'),
     url(r'^admin/', admin.site.urls),
     url(r'^(?P<id>\d+)/$',views.detail,name='details'),
-    url(r'^comments/',include('django_comments.urls'),name='comments'),
+    url(r'^login/', views.login,name='login'),
+   # url(r'^comments/',include('django_comments.urls'),name='comments'),
 ]
