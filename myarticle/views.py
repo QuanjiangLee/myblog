@@ -7,7 +7,12 @@ from django.http import Http404
 # Create your views here.
 def home(request):
 	postList = myArticle.objects.all()
-	return render(request, 'home.html',{'postList':postList})
+	for post in postList:
+		if len(str(post.content)) > 200:
+			post.content = str(post.content)[0:200]
+		else:
+			continue
+	return render(request, 'home.html',{'postList':postList,'post.content':post.content})
 #    return HttpResponse("hello world,Django!")
 
 def  detail(request, id):
@@ -28,9 +33,13 @@ def detail(request, my_args):
 def templateTest(request):
 	return render(request,'templateTest.html',{'nowTime':datetime.now()})
 
+def login(request):
+	return render(request,'login.html')
+'''
 def archives(request):
 	try:
 		postList = myArticle.objects.all()
 	except myArticle.DoesNotExist:
 		raise Http404
 	return render(request,'archives.html',{'post_list' : postList,'error': False})
+'''
