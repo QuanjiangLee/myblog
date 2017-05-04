@@ -50,16 +50,19 @@
 </div>
 <div >
 <h3 class="widget-title"><span>文章归档</span></h3>
-    <ul id="archList">
-    
-    </ul>
+    {% for list in archiList %}
+    <li class="archives">
+        <a class="" style="font-size: 1.2em;" href="#">{{ list.category }}</a>
+        <!--Time:  <a class="post-author" href="#">{{ post.datetime }}</a> -->
+    </li>
+    {% endfor %}
 
 </div>
 <div style="margin-top: 30px;">
     <h3 class="widget-title"><span>近期文章</span></h3>
-    <ul id="recList">
-        
-    </ul>
+        {% for list in archiList %}
+        <p class="" style="font-weight: 700"><a href="{% url 'details' id=list.id %}">{{ list.title }}</a></p>
+    {% endfor %}
 </div>
 </div>
 </div>

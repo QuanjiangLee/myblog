@@ -12,7 +12,8 @@ def home(request):
 			post.content = str(post.content)[0:200]
 		else:
 			continue
-	return render(request, 'home.html',{'postList':postList,'post.content':post.content})
+	archiList = myArticle.objects.all()
+	return render(request, 'home.html',{'postList':postList,'archiList':archiList})
 #    return HttpResponse("hello world,Django!")
 
 def  detail(request, id):
@@ -20,10 +21,16 @@ def  detail(request, id):
 		post = myArticle.objects.get(id=str(id))
 	except myArticle.DoesNotExist:
 		raise Http404
-	return render(request, 'post.html', {'post': post})	
-
-
+	archiList = myArticle.objects.all()
+	return render(request, 'post.html', {'post': post,'archiList': archiList})	
 '''
+def archives(request):
+	try:
+		archiList = myArticle.objects.all()
+	except myArticle.DoesNotExist:
+		raise Http404
+	return render(request,'archives.html',{'archiList': archiList})
+
 def detail(request, my_args):
     post = myArticle.objects.all()[int(my_args)]
     str = ("title = %s, category = %s, datetime = %s, content = %s" 
