@@ -21,5 +21,14 @@
                 <a class="pure-button" href="{% url 'details' id=posts.id %}">查看更多>>></a>
         </section>
     {% endfor %}
+    <script type="text/javascript">
+        window.onload = function(){
+    postRequest("/testAjax",{"a": 3},print);
+}
+
+function print(ret){
+    alert(ret);
+}
+    </script>
 </div>
 {% endblock %}

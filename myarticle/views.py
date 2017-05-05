@@ -1,8 +1,10 @@
+import json
 from django.shortcuts import render
 from django.http import HttpResponse
 from myarticle.models import myArticle
 from datetime import datetime
 from django.http import Http404
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def home(request):
@@ -50,3 +52,8 @@ def archives(request):
 		raise Http404
 	return render(request,'archives.html',{'post_list' : postList,'error': False})
 '''
+@csrf_exempt
+def testAjax(request):
+	a = request.POST.get("a","").encode("utf-8")
+	print(a)
+	return HttpResponse(json.dumps(True), content_type='application/json')

@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^(?P<id>\d+)/$',views.detail,name='details'),
     url(r'^login/', views.login,name='login'),
+    url(r'^testAjax', views.testAjax),
    # url(r'^comments/',include('django_comments.urls'),name='comments'),
 ]
