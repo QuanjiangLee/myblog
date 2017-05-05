@@ -30,7 +30,9 @@ function getRequest(url,data,func){
 		if (request.status == 200){
 			let response = request.responseText;
 			//var response = request.responseXML;
-			func(response);
+			if (func != false){
+				func(JSON.parse(response));
+					}
 				} else {
 					alert("Error! Request status is " + request.status);
 				}
@@ -38,8 +40,9 @@ function getRequest(url,data,func){
 		} 
 	//request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	//request.setRequestHeader("Content-Type","text/xml");
-	request.setRequestHeader("Content-Type","application/json");
-	request.send(data);
+	request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+	request.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+	request.send(JSON.stringify(data));
     }
 
 function postRequest(url,data,func) {
@@ -51,7 +54,9 @@ function postRequest(url,data,func) {
 		if (request.status == 200){
 			//var response = request.responseXML;
 			let response = request.responseText;
-			func(response);
+			if (func != false){
+				func(JSON.parse(response));
+					}
 				} else {
 					alert("Error! Request status is " + request.status);
 				}
@@ -59,6 +64,7 @@ function postRequest(url,data,func) {
 		} 
 	//request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	//request.setRequestHeader("Content-Type","text/xml");
-	request.setRequestHeader("Content-Type","application/json");
-	request.send(data);
+	request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+	request.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+	request.send(JSON.stringify(data));
  }

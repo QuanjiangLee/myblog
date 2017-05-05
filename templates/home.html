@@ -23,11 +23,12 @@
     {% endfor %}
     <script type="text/javascript">
         window.onload = function(){
-    postRequest("/testAjax",{"a": 3},print);
+    getRequest("/testAjax",{"hello":"world"},print);
+    postRequest("/testAjax",{"hello":"world"},print);
 }
 
 function print(ret){
-    alert(ret);
+    alert(ret.hello);
 }
     </script>
 </div>
