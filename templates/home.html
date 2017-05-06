@@ -23,8 +23,8 @@
     {% endfor %}
     <script type="text/javascript">
         window.onload = function(){
-    getRequest("/testAjax",{"hello":"world"},print);
-    postRequest("/testAjax",{"hello":"world"},print);
+    //getRequest("/testAjax","world",print);
+    postRequest("/testAjax",{"hello" : "world"},print);
 }
 
 function print(ret){

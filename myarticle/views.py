@@ -55,8 +55,7 @@ def archives(request):
 @csrf_exempt
 def testAjax(request):
 	print (request.method)
-	#a = request.POST.get('hello','')
-	#a = request.body.decode("utf-8")
-	a={"hello":"world"}
-	print(a)
-	return HttpResponse(json.dumps(a), content_type='application/json')
+	#a={"hello":"world"}
+	a = json.loads(request.body.decode("utf-8"))
+	print(a["hello"])
+	return HttpResponse(json.dumps(a), content_type='application/json;charset=utf-8')

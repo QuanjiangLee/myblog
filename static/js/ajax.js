@@ -38,7 +38,7 @@ function getRequest(url,data,func){
 				}
 			}   
 		} 
-	//request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	//request.setRequestHeader("Content-Type","text/xml");
 	request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 	request.setRequestHeader("Content-Type","application/json;charset=UTF-8");
