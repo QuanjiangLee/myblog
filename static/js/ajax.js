@@ -21,7 +21,7 @@ if (request == null){
 }
 
 
-function getRequest(url,data,func){
+function getRequest(url,func){
    // request.onreadystatechange = 
 	let request = createRequest();
 	request.open("GET",url,true);
@@ -31,7 +31,7 @@ function getRequest(url,data,func){
 			let response = request.responseText;
 			//var response = request.responseXML;
 			if (func != false){
-				func(JSON.parse(response));
+				func(response);
 					}
 				} else {
 					alert("Error! Request status is " + request.status);
@@ -41,8 +41,8 @@ function getRequest(url,data,func){
 	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	//request.setRequestHeader("Content-Type","text/xml");
 	request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-	request.setRequestHeader("Content-Type","application/json;charset=UTF-8");
-	request.send(JSON.stringify(data));
+	//request.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+	request.send(null);
     }
 
 function postRequest(url,data,func) {
