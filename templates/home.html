@@ -23,12 +23,16 @@
     {% endfor %}
     <script type="text/javascript">
         window.onload = function(){
-    getRequest("/testAjax?hello='world'",print);
-    postRequest("/testAjax",{"hello" : "world"},print);
+    getRequest("/testAjax","hello='world'&hi=56",print1);
+    postRequest("/testAjax",{"hello" : "world"},print2);
 }
 
-function print(ret){
-    alert(ret);
+function print1(ret) {
+    // body...
+    alert(ret)
+}
+function print2(ret){
+    alert(ret.hello);
 }
     </script>
 </div>

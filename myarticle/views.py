@@ -58,9 +58,9 @@ def archives(request):
 def testAjax(request):
 	print (request)
 	if request.method == "GET":
-		a=request.GET.urlencode()
-		a=a.split("=")
-		#a=parse.urlparse(request.body)
+		#a = json.loads(request.body.decode("utf-8"))
+		#a=request.GET.get('hello','')
+		a=request.GET.get('hi')
 		print(a)
 	if request.method == "POST":
 		a = json.loads(request.body.decode("utf-8"))

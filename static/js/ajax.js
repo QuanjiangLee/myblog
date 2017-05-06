@@ -21,10 +21,12 @@ if (request == null){
 }
 
 
-function getRequest(url,func){
+function getRequest(url,data,func){
    // request.onreadystatechange = 
 	let request = createRequest();
-	request.open("GET",url,true);
+	var urlArgs = url + "?" + data;
+	alert(urlArgs)
+	request.open("GET",urlArgs,true);
 	request.onreadystatechange = function(){
 		if (request.readyState == 4){
 		if (request.status == 200){
