@@ -1,4 +1,6 @@
 import json
+import urllib
+from urllib import parse
 from django.shortcuts import render
 from django.http import HttpResponse
 from myarticle.models import myArticle
@@ -54,11 +56,12 @@ def archives(request):
 '''
 @csrf_exempt
 def testAjax(request):
-	print (request.method)
+	print (request)
 	if request.method == "GET":
 		a=request.GET.urlencode()
-		print(a) 
-	#a={"hello":"world"}request.body.decode('utf-8')
+		a=a.split("=")
+		#a=parse.urlparse(request.body)
+		print(a)
 	if request.method == "POST":
 		a = json.loads(request.body.decode("utf-8"))
 		print(a['hello'])
